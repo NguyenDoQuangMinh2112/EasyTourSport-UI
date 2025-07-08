@@ -1,1 +1,1 @@
-//cmt
+export { HomePage } from './home'

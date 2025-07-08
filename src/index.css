@@ -1,6 +1,468 @@
 @import "tailwindcss";
 
-@theme {
-  --color-primary: #3490dc;
-  --color-secondary: #ffed4a;
+/* Google Fonts - Optimized for Vietnamese and English */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap'); */
+
+/* Font configuration for multilingual support */
+:root {
+  /* Primary font family - Inter for excellent Vietnamese support */
+  --font-family-primary: "Inter", "SF Pro Display", "Segoe UI", "Roboto", "Noto Sans", "Source Sans Pro", sans-serif;
+  
+  /* Heading font family - Manrope for distinctive headings */
+  --font-family-heading: "Manrope", "Inter", "SF Pro Display", "Segoe UI", sans-serif;
+  
+  /* Monospace font family */
+  --font-family-mono: "JetBrains Mono", "Fira Code", "SF Mono", "Monaco", "Cascadia Code", monospace;
+  
+  /* Font features for better Vietnamese typography */
+  --font-feature-settings: "liga" 1, "kern" 1, "calt" 1;
+  --font-variant-ligatures: common-ligatures;
+  --text-rendering: optimizeLegibility;
+  
+  /* Optimized line heights for Vietnamese text */
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.6;
+  --line-height-relaxed: 1.75;
+  
+  /* Letter spacing for Vietnamese readability */
+  --letter-spacing-tight: -0.01em;
+  --letter-spacing-normal: 0.01em;
+  --letter-spacing-wide: 0.025em;
+}
+
+/* Dark mode styles */
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --primary: 222.2 47.4% 11.2%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 222.2 84% 4.9%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 210 40% 96%;
+  --accent-foreground: 222.2 84% 4.9%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 222.2 84% 4.9%;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 210 40% 98%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 212.7 26.8% 83.9%;
+}
+
+/* Base styles */
+* {
+  border-color: hsl(var(--border));
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-family-primary);
+  font-feature-settings: var(--font-feature-settings);
+  font-variant-ligatures: var(--font-variant-ligatures);
+  text-rendering: var(--text-rendering);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-normal);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Typography styles for Vietnamese and English */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Vietnamese text optimization */
+.text-vietnamese {
+  line-height: var(--line-height-relaxed);
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+/* Code and monospace text */
+code, pre, .font-mono {
+  font-family: var(--font-family-mono);
+  font-feature-settings: "liga" 0;
+}
+
+/* Better text rendering for different screen densities */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Custom animations */
+@keyframes gradient {
+  0%, 100% {
+    background-size: 200% 200%;
+    background-position: left center;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
+.animate-gradient {
+  animation: gradient 3s ease infinite;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom backdrop blur for better browser support */
+.backdrop-blur-custom {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Gradient text utilities */
+.gradient-text {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Sport Card Border Animations */
+@keyframes borderGlow {
+  0%, 100% {
+    box-shadow: 
+      0 0 5px rgba(59, 130, 246, 0.3),
+      0 0 10px rgba(59, 130, 246, 0.2),
+      0 0 15px rgba(59, 130, 246, 0.1);
+    border-color: rgba(59, 130, 246, 0.4);
+  }
+  50% {
+    box-shadow: 
+      0 0 10px rgba(59, 130, 246, 0.5),
+      0 0 20px rgba(59, 130, 246, 0.3),
+      0 0 30px rgba(59, 130, 246, 0.2);
+    border-color: rgba(59, 130, 246, 0.6);
+  }
+}
+
+@keyframes borderPulse {
+  0%, 100% {
+    border-color: rgba(75, 85, 99, 0.5);
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+  }
+  50% {
+    border-color: rgba(59, 130, 246, 0.3);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 20px rgba(59, 130, 246, 0.4),
+      0 0 40px rgba(139, 92, 246, 0.3),
+      0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    box-shadow: 
+      0 0 30px rgba(59, 130, 246, 0.6),
+      0 0 60px rgba(139, 92, 246, 0.4),
+      0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@keyframes badgeGlow {
+  0% {
+    box-shadow: 
+      0 4px 12px rgba(251, 191, 36, 0.4),
+      0 0 0 2px rgba(255, 255, 255, 0.1),
+      0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    box-shadow: 
+      0 6px 16px rgba(251, 191, 36, 0.6),
+      0 0 0 2px rgba(255, 255, 255, 0.2),
+      0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Sport Card Base Classes */
+.sport-card {
+  position: relative;
+  background: rgba(31, 41, 55, 0.5);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(75, 85, 99, 0.5);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  overflow: visible; /* Allow badge to extend outside */
+  margin-top: 12px; /* Add margin to accommodate badge */
+}
+
+.sport-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.sport-card-default {
+  animation: borderPulse 3s ease-in-out infinite;
+}
+
+.sport-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  background: rgba(31, 41, 55, 0.7);
+  border-color: rgba(59, 130, 246, 0.6);
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+.sport-card:hover::before {
+  opacity: 1;
+}
+
+/* Popular badge glow - positioned on border */
+.popular-badge {
+  position: absolute;
+  top: 22px; /* Half the badge height sits above the border */
+  right: 16px;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  color: #000;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.375rem 0.875rem;
+  border-radius: 9999px;
+  box-shadow: 
+    0 4px 12px rgba(251, 191, 36, 0.4),
+    0 0 0 2px rgba(255, 255, 255, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.2);
+  animation: badgeGlow 2s ease-in-out infinite alternate;
+  z-index: 10;
+  white-space: nowrap;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+  height: 24px;
+  display: flex;
+  align-items: center;
+}
+
+/* Badge hover effect */
+.sport-card:hover .popular-badge {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 
+    0 6px 16px rgba(251, 191, 36, 0.5),
+    0 0 0 2px rgba(255, 255, 255, 0.2),
+    0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Icon glow effect */
+.sport-icon {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sport-card:hover .sport-icon {
+  transform: scale(1.1) rotate(5deg);
+  filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.5));
+}
+
+/* Advanced Glow Effects for Popular Cards */
+.sport-card.popular-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.sport-card.popular-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(251, 191, 36, 0.1),
+    transparent
+  );
+  transform: rotate(45deg);
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) rotate(45deg);
+  }
+  50% {
+    transform: translateX(0%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(45deg);
+  }
+}
+
+/* Ripple effect on click */
+.sport-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.sport-card::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(59, 130, 246, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.sport-card:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* Floating animation for popular cards */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.sport-card.popular-card:hover {
+  animation: float 2s ease-in-out infinite, glowPulse 2s ease-in-out infinite;
+}
+
+/* Gradient border animation */
+@keyframes gradientBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Popular cards with gradient border - simplified */
+.sport-card.popular-card {
+  position: relative;
+  background: linear-gradient(
+    45deg,
+    rgba(59, 130, 246, 0.4),
+    rgba(139, 92, 246, 0.4),
+    rgba(236, 72, 153, 0.4),
+    rgba(59, 130, 246, 0.4)
+  );
+  background-size: 300% 300%;
+  animation: gradientBorder 4s ease infinite;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+/* Maintain card content visibility for popular cards */
+.sport-card.popular-card {
+  background: 
+    rgba(31, 41, 55, 0.9),
+    linear-gradient(
+      45deg,
+      rgba(59, 130, 246, 0.4),
+      rgba(139, 92, 246, 0.4),
+      rgba(236, 72, 153, 0.4),
+      rgba(59, 130, 246, 0.4)
+    );
+  background-size: auto, 300% 300%;
+  animation: gradientBorder 4s ease infinite;
+}
+
+/* Hover lift effect with shadow */
+.sport-card:hover {
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(59, 130, 246, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Selected card highlighting */
+.sport-card.selected-card {
+  border-color: rgba(59, 130, 246, 0.8);
+  background: rgba(59, 130, 246, 0.1);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 
+    0 0 20px rgba(59, 130, 246, 0.5),
+    0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.sport-card.selected-card::before {
+  opacity: 1;
+}
+
+/* Smooth transitions for all elements */
+.sport-card * {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }

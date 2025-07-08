@@ -1,0 +1,133 @@
+{
+  "common": {
+    "welcome": "Chào mừng",
+    "loading": "Đang tải...",
+    "error": "Lỗi",
+    "success": "Thành công",
+    "cancel": "Hủy",
+    "save": "Lưu",
+    "edit": "Chỉnh sửa",
+    "delete": "Xóa",
+    "confirm": "Xác nhận",
+    "back": "Quay lại",
+    "next": "Tiếp theo",
+    "previous": "Trước đó",
+    "search": "Tìm kiếm",
+    "filter": "Lọc",
+    "export": "Xuất",
+    "import": "Nhập",
+    "labels": {
+      "popular": "Phổ biến"
+    }
+  },
+  "navigation": {
+    "home": "Trang chủ",
+    "tours": "Du lịch",
+    "sports": "Thể thao",
+    "booking": "Đặt tour",
+    "about": "Giới thiệu",
+    "contact": "Liên hệ",
+    "profile": "Hồ sơ",
+    "settings": "Cài đặt",
+    "dashboard": "Bảng điều khiển"
+  },
+  "auth":{
+    "login": "Đăng nhập",
+    "register": "Đăng ký"
+  },
+  "theme": {
+    "light": "Sáng",
+    "dark": "Tối",
+    "system": "Hệ thống",
+    "toggle": "Chuyển đổi giao diện",
+    "current": "Giao diện hiện tại: {{theme}}. Nhấp để thay đổi."
+  },
+  "language": {
+    "english": "Tiếng Anh",
+    "vietnamese": "Tiếng Việt",
+    "toggle": "Đổi ngôn ngữ",
+    "current": "Ngôn ngữ hiện tại: {{language}}"
+  },
+  "app": {
+    "title": "EasyTourSport",
+    "description": "Điểm đến tối ưu cho các tour thể thao và phiêu lưu",
+    "slogan": "Khám phá. Trải nghiệm. Chinh phục."
+  },
+  "home": {
+    "hero": {
+      "title": "Chọn môn thể thao để tạo giải đấu",
+      "subtitle": "Tạo giải đấu",
+      "description": "Tổ chức các giải đấu chuyên nghiệp với hệ thống quản lý toàn diện"
+    },
+    "sports": {
+      "title": "Các môn thể thao",
+      "football": {
+        "title": "Bóng đá",
+        "description": "Tổ chức giải đấu bóng đá chuyên nghiệp",
+        "details": "11 vs 11 • 90 phút • Luật FIFA",
+        "format": "VAR",
+        "tournaments": "156 giải đấu",
+        "participants": "2.1M+"
+      },
+      "badminton": {
+        "title": "Cầu lông",
+        "description": "Giải đấu cầu lông đơn và đôi",
+        "details": "Đơn/Đôi • 3 set • 21 điểm",
+        "format": "BWF", 
+        "tournaments": "89 giải đấu",
+        "participants": "450K+"
+      },
+      "tabletennis": {
+        "title": "Bóng bàn",
+        "description": "Thi đấu bóng bàn trong nhà",
+        "details": "Đơn/Đôi • 5 set • 11 điểm", 
+        "format": "ITTF",
+        "tournaments": "67 giải đấu",
+        "participants": "320K+"
+      },
+      "basketball": {
+        "title": "Bóng rổ",
+        "description": "Giải đấu bóng rổ 5 vs 5",
+        "details": "5 vs 5 • 4 hiệp • 12 phút",
+        "format": "FIBA",
+        "tournaments": "134 giải đấu",
+        "participants": "850K+"
+      },
+      "volleyball": {
+        "title": "Bóng chuyền",
+        "description": "Thi đấu bóng chuyền 6 vs 6",
+        "details": "6 vs 6 • 5 set • 25 điểm",
+        "format": "FIVB",
+        "tournaments": "78 giải đấu",
+        "participants": "560K+"
+      },
+      "esports": {
+        "title": "Thể thao điện tử",
+        "description": "Giải đấu game trực tuyến",
+        "details": "Trực tuyến • Streaming • Nhiều game",
+        "format": "Global",
+        "tournaments": "234 giải đấu",
+        "participants": "1.8M+"
+      }
+    },
+    "cta": {
+      "selectSport": "Chọn một môn thể thao để bắt đầu tạo giải đấu",
+      "ready": "Sẵn sàng tạo giải đấu {{sport}}?",
+      "description": "Bắt đầu tạo giải đấu chuyên nghiệp với đầy đủ tính năng quản lý",
+      "continue": "Tiếp tục",
+      "demo": "Xem demo"
+    },
+    "stats": {
+      "tournaments": "1000+ Giải đấu",
+      "participants": "5M+ Người tham gia",
+      "rating": "Đánh giá 4.9/5"
+    }
+  },
+  "validation": {
+    "required": "Trường này là bắt buộc",
+    "email": "Vui lòng nhập địa chỉ email hợp lệ",
+    "phone": "Vui lòng nhập số điện thoại hợp lệ",
+    "min": "Yêu cầu tối thiểu {{count}} ký tự",
+    "max": "Tối đa {{count}} ký tự được phép"
+  }
+}

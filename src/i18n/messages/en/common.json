@@ -1,0 +1,133 @@
+{
+  "common": {
+    "welcome": "Welcome",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "confirm": "Confirm",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "search": "Search",
+    "filter": "Filter",
+    "export": "Export",
+    "import": "Import",
+    "labels": {
+      "popular": "Popular"
+    }
+  },
+  "navigation": {
+    "home": "Home",
+    "tours": "Tours",
+    "sports": "Sports",
+    "booking": "Booking",
+    "about": "About",
+    "contact": "Contact",
+    "profile": "Profile",
+    "settings": "Settings",
+    "dashboard": "Dashboard"
+  },
+  "auth":{
+    "login": "Login",
+    "register": "Register"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "toggle": "Toggle theme",
+    "current": "Current theme: {{theme}}. Click to change."
+  },
+  "language": {
+    "english": "English",
+    "vietnamese": "Vietnamese",
+    "toggle": "Change language",
+    "current": "Current language: {{language}}"
+  },
+  "app": {
+    "title": "EasyTourSport",
+    "description": "Your ultimate destination for sports tours and adventures",
+    "slogan": "Discover. Play. Experience."
+  },
+  "home": {
+    "hero": {
+      "title": "Choose Your Sport to Create Tournament",
+      "subtitle": "Create Tournament",
+      "description": "Organize professional tournaments with comprehensive management system"
+    },
+    "sports": {
+      "title": "Sports Categories",
+      "football": {
+        "title": "Football",
+        "description": "Professional football tournament organization",
+        "details": "11/7/5 vs • 90/60/40 mins • FIFA Rules",
+        "format": "VAR",
+        "tournaments": "156 tournaments",
+        "participants": "2.1M+"
+      },
+      "badminton": {
+        "title": "Badminton", 
+        "description": "Singles and doubles badminton tournaments",
+        "details": "Singles/Doubles • 3 sets • 21 points",
+        "format": "BWF",
+        "tournaments": "89 tournaments",
+        "participants": "450K+"
+      },
+      "tabletennis": {
+        "title": "Table Tennis",
+        "description": "Indoor table tennis competitions", 
+        "details": "Singles/Doubles • 5 sets • 11 points",
+        "format": "ITTF",
+        "tournaments": "67 tournaments",
+        "participants": "320K+"
+      },
+      "basketball": {
+        "title": "Basketball",
+        "description": "5 vs 5 basketball tournaments",
+        "details": "5 vs 5 • 4 quarters • 12 min",
+        "format": "FIBA",
+        "tournaments": "134 tournaments", 
+        "participants": "850K+"
+      },
+      "volleyball": {
+        "title": "Volleyball",
+        "description": "6 vs 6 volleyball competitions",
+        "details": "6 vs 6 • 5 sets • 25 points",
+        "format": "FIVB",
+        "tournaments": "78 tournaments",
+        "participants": "560K+"
+      },
+      "esports": {
+        "title": "E-Sports",
+        "description": "Online gaming tournaments",
+        "details": "Online • Streaming • Multiple Games",
+        "format": "Global",
+        "tournaments": "234 tournaments",
+        "participants": "1.8M+"
+      }
+    },
+    "cta": {
+      "selectSport": "Select a sport to start creating your tournament",
+      "ready": "Ready to create {{sport}} tournament?",
+      "description": "Start creating professional tournament with full management features",
+      "continue": "Continue",
+      "demo": "View Demo"
+    },
+    "stats": {
+      "tournaments": "1000+ Tournaments",
+      "participants": "5M+ Participants", 
+      "rating": "4.9/5 Rating"
+    }
+  },
+  "validation": {
+    "required": "This field is required",
+    "email": "Please enter a valid email address",
+    "phone": "Please enter a valid phone number",
+    "min": "Minimum {{count}} characters required",
+    "max": "Maximum {{count}} characters allowed"
+  }
+}

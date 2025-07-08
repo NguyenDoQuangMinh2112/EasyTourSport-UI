@@ -1,8 +1,14 @@
+import { Layout } from './components'
+import { HomePage } from './pages'
+import { SportSelectionProvider } from './contexts/sport-selection-unified'
+
 function App() {
   return (
-    <div className="bg-primary">
-      <h1>Hello world</h1>
-    </div>
+    <SportSelectionProvider>
+      <Layout>
+        <HomePage />
+      </Layout>
+    </SportSelectionProvider>
   )
 }
 
