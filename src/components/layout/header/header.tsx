@@ -10,15 +10,17 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-gradient-to-r from-slate-900/95 via-blue-900/90 to-slate-900/95 backdrop-blur supports-[backdrop-filter]:bg-gradient-to-r supports-[backdrop-filter]:from-slate-900/70 supports-[backdrop-filter]:via-blue-900/65 supports-[backdrop-filter]:to-slate-900/70 before:absolute before:inset-x-0 before:bottom-0 before:h-[1px] before:bg-gradient-to-r before:from-blue-500/30 before:via-purple-600/30 before:to-blue-500/30">
       <div className="container mx-auto flex h-16 max-w-screen-2xl items-center justify-between px-4">
         {/* Logo Section */}
         <div className="flex items-center space-x-2">
           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 text-white font-bold text-lg">
             <Trophy />
           </div>
-          <div className="flex flex-col">
-            <span className="font-bold text-lg leading-none">{t('app.title')}</span>
+          <div className="flex flex-col gap-1.5">
+            <span className="font-heading font-bold text-[20px] leading-none bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 transition-all duration-300 group-hover:from-blue-300 group-hover:to-purple-400">
+              {t('app.title')}
+            </span>
             <span className="text-xs text-muted-foreground leading-none">{t('app.slogan')}</span>
           </div>
         </div>
@@ -27,12 +29,11 @@ const Header = () => {
         <nav className="hidden md:flex items-center space-x-8">
           {NAVIGATION_ITEMS.map((item) => (
             <a
-              key={item.key}
+              key={item.href}
               href={item.href}
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground relative group"
+              className="text-sm font-medium transition-colors hover:text-primary hover:bg-gradient-to-r hover:from-blue-500/10 hover:to-purple-600/10 px-3 py-2 rounded-md"
             >
               {t(item.key)}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-600 transition-all duration-300 group-hover:w-full"></span>
             </a>
           ))}
         </nav>
@@ -45,11 +46,13 @@ const Header = () => {
             <ThemeSelect />
           </div>
 
-          {/* CTA Button */}
-          <button className="cursor-pointer hidden sm:inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:from-blue-600 hover:to-purple-700 hover:shadow-lg hover:shadow-blue-500/25 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900">
+          {/* Login Button - Primary style with gradient */}
+          <button className="cursor-pointer inline-flex items-center justify-center rounded-lg border border-blue-500/30 bg-transparent px-4 py-2 text-sm font-medium text-primary transition-all duration-200 hover:bg-blue-500/10 hover:text-blue-400 hover:border-blue-500/50 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:ring-offset-2 dark:focus:ring-offset-gray-900">
             {t('auth.login')}
           </button>
-          <button className="cursor-pointer hidden sm:inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:from-blue-600 hover:to-purple-700 hover:shadow-lg hover:shadow-blue-500/25 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900">
+
+          {/* Register Button - Primary style with gradient */}
+          <button className="cursor-pointer inline-flex items-center justify-center rounded-lg border border-blue-500/30 bg-transparent px-4 py-2 text-sm font-medium text-primary transition-all duration-200 hover:bg-blue-500/10 hover:text-blue-400 hover:border-blue-500/50 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:ring-offset-2 dark:focus:ring-offset-gray-900">
             {t('auth.register')}
           </button>
 
@@ -97,7 +100,7 @@ const Header = () => {
                 <LanguageSelect />
                 <ThemeSelect />
               </div>
-              <button className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:from-blue-600 hover:to-purple-700">
+              <button className="inline-flex items-center justify-center rounded-lg border border-blue-500/30 bg-transparent px-4 py-2 text-sm font-medium text-primary transition-all duration-200 hover:bg-blue-500/10 hover:text-blue-400 hover:border-blue-500/50">
                 {t('auth.login')}
               </button>
             </div>
