@@ -24,6 +24,7 @@
     "home": "Home",
     "tours": "Tours",
     "sports": "Sports",
+    "tournaments": "Tournaments",
     "booking": "Booking",
     "about": "About",
     "contact": "Contact",
@@ -31,9 +32,28 @@
     "settings": "Settings",
     "dashboard": "Dashboard"
   },
-  "auth":{
+  "auth": {
     "login": "Login",
-    "register": "Register"
+    "register": "Register",
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "createAccount": "Create Account",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "fullName": "Full Name",
+    "enterEmail": "Enter your email",
+    "enterPassword": "Enter your password",
+    "enterFullName": "Enter your full name",
+    "forgotPassword": "Forgot password?",
+    "loginDescription": "Welcome back! Please sign in to your account.",
+    "registerDescription": "Create a new account to get started.",
+    "or": "or",
+    "continueWithGoogle": "Continue with Google",
+    "continueWithGithub": "Continue with Github",
+    "continueWithTwitter": "Continue with Twitter",
+    "noAccount": "Don't have an account?",
+    "haveAccount": "Already have an account?"
   },
   "theme": {
     "light": "Light",

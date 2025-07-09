@@ -24,6 +24,7 @@
     "home": "Trang chủ",
     "tours": "Du lịch",
     "sports": "Thể thao",
+    "tournaments": "Giải đấu",
     "booking": "Đặt tour",
     "about": "Giới thiệu",
     "contact": "Liên hệ",
@@ -31,9 +32,28 @@
     "settings": "Cài đặt",
     "dashboard": "Bảng điều khiển"
   },
-  "auth":{
+  "auth": {
     "login": "Đăng nhập",
-    "register": "Đăng ký"
+    "register": "Đăng ký",
+    "signIn": "Đăng nhập",
+    "signUp": "Đăng ký",
+    "createAccount": "Tạo tài khoản",
+    "email": "Email",
+    "password": "Mật khẩu",
+    "confirmPassword": "Xác nhận mật khẩu",
+    "fullName": "Họ và tên",
+    "enterEmail": "Nhập email của bạn",
+    "enterPassword": "Nhập mật khẩu",
+    "enterFullName": "Nhập họ và tên",
+    "forgotPassword": "Quên mật khẩu?",
+    "loginDescription": "Chào mừng trở lại! Vui lòng đăng nhập vào tài khoản của bạn.",
+    "registerDescription": "Tạo tài khoản mới để bắt đầu.",
+    "or": "hoặc",
+    "continueWithGoogle": "Tiếp tục với Google",
+    "continueWithGithub": "Tiếp tục với Github",
+    "continueWithTwitter": "Tiếp tục với Twitter",
+    "noAccount": "Chưa có tài khoản?",
+    "haveAccount": "Đã có tài khoản?"
   },
   "theme": {
     "light": "Sáng",

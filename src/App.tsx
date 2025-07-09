@@ -1,15 +1,7 @@
-import { Layout } from './components'
-import { HomePage } from './pages'
-import { SportSelectionProvider } from './contexts/sport-selection-unified'
+import { AppRouter } from './router'
 
 function App() {
-  return (
-    <SportSelectionProvider>
-      <Layout>
-        <HomePage />
-      </Layout>
-    </SportSelectionProvider>
-  )
+  return <AppRouter />
 }
 
 export default App
