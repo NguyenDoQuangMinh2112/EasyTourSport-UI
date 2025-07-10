@@ -21,14 +21,14 @@ const Footer = () => {
   }
 
   return (
-    <footer className="relative bg-gradient-to-br from-slate-900 via-blue-900/50 to-slate-900 border-t border-slate-700/50">
+    <footer className="relative bg-gradient-to-br from-slate-900 via-blue-900/60 to-indigo-900 border-t border-slate-700/50">
       {/* Decorative top border */}
-      <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-blue-500/30 via-purple-600/30 to-blue-500/30" />
+      <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-blue-500/30 via-indigo-500/40 to-blue-500/30" />
 
       {/* Background effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-1/4 w-32 h-32 bg-blue-500/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-1/4 w-40 h-40 bg-purple-500/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-1/4 w-40 h-40 bg-indigo-500/8 rounded-full blur-3xl" />
       </div>
 
       <div className="relative container mx-auto px-4 py-16">

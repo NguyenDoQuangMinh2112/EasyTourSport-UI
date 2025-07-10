@@ -19,7 +19,7 @@ const Header = () => {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-gradient-to-r from-slate-900/95 via-blue-900/50 to-slate-900/95 backdrop-blur supports-[backdrop-filter]:bg-gradient-to-r supports-[backdrop-filter]:from-slate-900/70 supports-[backdrop-filter]:via-blue-900/35 supports-[backdrop-filter]:to-slate-900/70 before:absolute before:inset-x-0 before:bottom-0 before:h-[1px] before:bg-gradient-to-r before:from-blue-500/30 before:via-purple-600/30 before:to-blue-500/30">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-gradient-to-r from-slate-900/95 via-slate-800/90 to-slate-900/95 backdrop-blur supports-[backdrop-filter]:bg-gradient-to-r supports-[backdrop-filter]:from-slate-900/70 supports-[backdrop-filter]:via-slate-800/65 supports-[backdrop-filter]:to-slate-900/70 before:absolute before:inset-x-0 before:bottom-0 before:h-[1px] before:bg-gradient-to-r before:from-slate-500/30 before:via-slate-600/30 before:to-slate-500/30">
       <div className="container mx-auto flex h-16 max-w-screen-2xl items-center justify-between px-4">
         {/* Enhanced Logo Section */}
         <div className="flex items-center space-x-3 group cursor-pointer">

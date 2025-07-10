@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from '../../hooks/use-translation'
 import { useSportSelection } from '../../contexts/sport-selection-unified'
-import { cn, commonStyles, gradients } from '../../utils'
+import { cn, commonStyles } from '../../utils'
 import { ArrowRight, Play, Sparkles, Trophy, Zap } from 'lucide-react'
 
 // Static positions for particles to avoid re-renders and flickering
@@ -16,9 +16,9 @@ const PARTICLE_POSITIONS = [
 
 // Pre-defined feature pills to avoid recreating on each render
 const FEATURE_PILLS = [
-  { icon: Trophy, text: 'Professional', color: gradients.status.intermediate },
-  { icon: Zap, text: 'Fast Setup', color: gradients.action.primary },
-  { icon: Sparkles, text: 'Modern UI', color: gradients.section.sports }
+  { icon: Trophy, text: 'Professional', color: 'from-yellow-500 to-orange-500' },
+  { icon: Zap, text: 'Fast Setup', color: 'from-blue-500 to-cyan-500' },
+  { icon: Sparkles, text: 'Modern UI', color: 'from-purple-500 to-pink-500' }
 ] as const
 
 export function CTASection() {
@@ -109,7 +109,7 @@ export function CTASection() {
           {/* Primary Button - Optimized animations */}
           <button
             onClick={handleCreateTournament}
-            className={`group relative overflow-hidden w-full sm:w-auto bg-gradient-to-r ${gradients.brand.primary} text-white font-bold text-lg px-8 py-4 rounded-xl shadow-2xl transition-all duration-300 hover:shadow-purple-500/25 hover:scale-105 active:scale-95`}
+            className="group relative overflow-hidden w-full sm:w-auto bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-bold text-lg px-8 py-4 rounded-xl shadow-2xl transition-all duration-300 hover:shadow-purple-500/25 hover:scale-105 active:scale-95"
           >
             {/* Optimized shimmer effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />

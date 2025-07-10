@@ -1,5 +1,6 @@
-// Unified Color Scheme for EasyTourSport
-// This file defines the consistent color palette used throughout the application
+// Unified Color Scheme for EasyTourSport - Component Colors Only
+// This file defines consistent colors for UI components (buttons, cards, etc.)
+// Background colors are kept as-is and not modified by this system
 
 export const colors = {
   // Primary Brand Colors
@@ -84,15 +85,6 @@ export const gradients = {
     danger: 'from-red-500 to-pink-500'
   },
 
-  // Background gradients
-  background: {
-    main: 'from-slate-900 via-blue-900/50 to-slate-900',
-    header: 'from-slate-900/95 via-blue-900/50 to-slate-900/95',
-    headerBackdrop: 'from-slate-900/70 via-blue-900/35 to-slate-900/70',
-    card: 'from-slate-800/50 to-slate-700/50',
-    accent: 'from-blue-500/30 via-purple-600/30 to-blue-500/30'
-  },
-
   // Status gradients
   status: {
     beginner: 'from-green-500 to-blue-500',
@@ -136,6 +128,5 @@ export const getGradient = {
   brand: () => `bg-gradient-to-br ${gradients.brand.primary}`,
   brandText: () => `bg-gradient-to-r ${gradients.brand.text}`,
   action: () => `bg-gradient-to-r ${gradients.action.primary}`,
-  background: () => `bg-gradient-to-br ${gradients.background.main}`,
   status: (level: 'beginner' | 'intermediate' | 'advanced') => `bg-gradient-to-r ${gradients.status[level]}`
 } as const
