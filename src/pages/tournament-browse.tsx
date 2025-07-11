@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { cn } from '../utils'
 import { Search, MapPin, Calendar, Users, Trophy, Star, Clock } from 'lucide-react'
 import { SPORTS_DATA } from '../constants/data'
+import { CreateTournamentButton } from '../components/ui/tournament-buttons'
 
 interface Tournament {
   id: string
@@ -151,7 +152,12 @@ export function TournamentBrowsePage() {
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-white mb-4">Tournament Marketplace</h1>
-          <p className="text-slate-400 text-lg">Discover and join amazing sports tournaments</p>
+          <p className="text-slate-400 text-lg mb-6">Discover and join amazing sports tournaments</p>
+
+          {/* Create Tournament Button */}
+          <div className="flex justify-center">
+            <CreateTournamentButton />
+          </div>
         </div>
 
         {/* Search and Filters */}

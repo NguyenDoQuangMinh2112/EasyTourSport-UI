@@ -1,6 +1,22 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Layout } from '../components'
-import { HomePage, DashboardPage, ProfileSetupPage, TournamentBrowsePage } from '../pages'
+import {
+  HomePage,
+  DashboardPage,
+  ProfileSetupPage,
+  TournamentBrowsePage,
+  TournamentCreatePage,
+  TournamentSetupPage,
+  TournamentDetailsPage,
+  MatchDetailsPage,
+  TeamProfilePage,
+  PlayerProfilePage,
+  MatchSchedulePage,
+  UserDashboardPage,
+  AuthPage,
+  FeaturesPage,
+  TeamsPlayersPage
+} from '../pages'
 import { SportSelectionProvider } from '../contexts/sport-selection-unified'
 
 const router = createBrowserRouter([
@@ -12,43 +28,97 @@ const router = createBrowserRouter([
       </SportSelectionProvider>
     ),
     children: [
+      // Trang chủ
       {
         index: true,
         element: <HomePage />
       },
+
+      // Dashboard
       {
         path: 'dashboard',
         element: <DashboardPage />
       },
+
+      // Profile setup
       {
         path: 'profile/setup',
         element: <ProfileSetupPage />
       },
+
+      // Tournament routes - theo thứ tự logic
       {
         path: 'tournaments',
         element: <TournamentBrowsePage />
       },
       {
         path: 'tournaments/create/:sportId?',
-        element: (
-          <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 py-8 flex items-center justify-center">
-            <div className="text-center">
-              <h1 className="text-3xl font-bold text-white mb-4">Create Tournament</h1>
-              <p className="text-slate-400">Coming Soon...</p>
-            </div>
-          </div>
-        )
+        element: <TournamentCreatePage />
+      },
+      {
+        path: 'tournaments/setup/:sportId/:tournamentId',
+        element: <TournamentSetupPage />
       },
       {
         path: 'tournaments/:id',
-        element: (
-          <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 py-8 flex items-center justify-center">
-            <div className="text-center">
-              <h1 className="text-3xl font-bold text-white mb-4">Tournament Details</h1>
-              <p className="text-slate-400">Coming Soon...</p>
-            </div>
-          </div>
-        )
+        element: <TournamentDetailsPage />
+      },
+      // Match and team details
+      {
+        path: 'matches',
+        element: <MatchSchedulePage />
+      },
+      {
+        path: 'matches/:matchId',
+        element: <MatchDetailsPage />
+      },
+      {
+        path: 'teams/:teamId',
+        element: <TeamProfilePage />
+      },
+      {
+        path: 'players/:playerId',
+        element: <PlayerProfilePage />
+      },
+
+      // Authentication
+      {
+        path: 'auth',
+        element: <AuthPage />
+      },
+      {
+        path: 'login',
+        element: <AuthPage />
+      },
+      {
+        path: 'register',
+        element: <AuthPage />
+      },
+
+      // User and organizer dashboards
+      {
+        path: 'organizer',
+        element: <UserDashboardPage />
+      },
+      {
+        path: 'user-dashboard',
+        element: <UserDashboardPage />
+      },
+
+      // Features overview
+      {
+        path: 'features',
+        element: <FeaturesPage />
+      },
+
+      // Redirects and aliases
+      {
+        path: 'teams',
+        element: <TeamsPlayersPage />
+      },
+      {
+        path: 'players',
+        element: <TeamsPlayersPage />
       }
     ]
   }

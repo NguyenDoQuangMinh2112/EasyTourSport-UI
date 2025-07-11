@@ -9,6 +9,7 @@ import { cn } from '../../../utils'
 const NAVIGATION_ITEMS = [
   { href: '/', key: 'navigation.home', icon: '🏠' },
   { href: '/tournaments', key: 'navigation.tournaments', icon: '🏆' },
+  { href: '/matches', key: 'navigation.matches', icon: '⚽' },
   { href: '/dashboard', key: 'navigation.dashboard', icon: '📊' }
 ]
 

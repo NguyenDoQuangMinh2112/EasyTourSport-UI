@@ -11,19 +11,19 @@ export const SPORTS_DATA: SportData[] = [
     id: 'badminton',
     icon: '🏸',
     color: 'from-blue-500 to-blue-600',
-    popular: false
+    popular: true
   },
   {
     id: 'tabletennis',
     icon: '🏓',
     color: 'from-red-500 to-red-600',
-    popular: false
+    popular: true
   },
   {
     id: 'basketball',
     icon: '🏀',
     color: 'from-orange-500 to-orange-600',
-    popular: true
+    popular: false
   },
   {
     id: 'volleyball',
@@ -35,7 +35,7 @@ export const SPORTS_DATA: SportData[] = [
     id: 'esports',
     icon: '🎮',
     color: 'from-pink-500 to-pink-600',
-    popular: true
+    popular: false
   }
 ]
 

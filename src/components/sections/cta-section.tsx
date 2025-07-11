@@ -38,6 +38,10 @@ export function CTASection() {
     navigate('/tournaments')
   }
 
+  const handleViewMatches = () => {
+    navigate('/matches')
+  }
+
   if (!selectedSport) {
     return (
       <div className="text-center mt-16 p-12 bg-gradient-to-br from-slate-800/30 via-blue-900/20 to-slate-800/30 rounded-3xl border border-slate-700/50 backdrop-blur-sm">
@@ -121,7 +125,7 @@ export function CTASection() {
             </div>
           </button>
 
-          {/* Secondary Button - Optimized */}
+          {/* Secondary Button - View Tournaments */}
           <button
             onClick={handleViewDemo}
             className="group relative overflow-hidden w-full sm:w-auto bg-slate-800/50 border border-slate-600/50 text-slate-300 font-semibold text-lg px-8 py-4 rounded-xl backdrop-blur-sm transition-all duration-300 hover:bg-slate-700/50 hover:border-slate-500 hover:text-white hover:scale-105"
@@ -131,6 +135,19 @@ export function CTASection() {
             <div className="relative flex items-center justify-center gap-3">
               <Play className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
               <span>{t('home.cta.demo')}</span>
+            </div>
+          </button>
+
+          {/* Tertiary Button - View Matches */}
+          <button
+            onClick={handleViewMatches}
+            className="group relative overflow-hidden w-full sm:w-auto bg-green-600/20 border border-green-500/30 text-green-300 font-semibold text-lg px-6 py-3 rounded-xl backdrop-blur-sm transition-all duration-300 hover:bg-green-600/30 hover:border-green-400 hover:text-green-200 hover:scale-105"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-green-700/20 to-green-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+            <div className="relative flex items-center justify-center gap-2">
+              <Trophy className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
+              <span>Xem lịch thi đấu</span>
             </div>
           </button>
         </div>
