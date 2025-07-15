@@ -41,7 +41,9 @@ export function SportCard({ sport }: SportCardProps) {
         {sport.icon}
       </div>
 
-      <h3 className={cn(commonStyles.typography.heading.h3, 'text-2xl mb-3')}>{t(`home.sports.${sport.id}.title`)}</h3>
+      <h3 className={cn(commonStyles.typography.heading.h3, 'text-2xl mb-3 text-white')}>
+        {t(`home.sports.${sport.id}.title`)}
+      </h3>
       <p className={cn(commonStyles.typography.body.md, commonStyles.text.muted, 'mb-4 leading-relaxed')}>
         {t(`home.sports.${sport.id}.description`)}
       </p>

@@ -468,7 +468,7 @@ export function TournamentCreatePage() {
                   <div className="mt-3 text-center">
                     <div
                       className={cn(
-                        'text-sm font-semibold mb-1',
+                        'text-sm font-semibold mb-1 pt-4',
                         currentStep >= step.id ? 'text-white' : 'text-slate-400'
                       )}
                     >
