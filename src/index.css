@@ -628,3 +628,194 @@ html {
   background: linear-gradient(180deg, rgba(59, 130, 246, 0.8), rgba(147, 51, 234, 0.8));
   width: 8px;
 }
+
+/* Enhanced animations for notification dropdown */
+@keyframes slideInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Notification dropdown animation */
+.notification-dropdown {
+  animation: slideInDown 0.2s ease-out;
+}
+
+.notification-item {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+.notification-item:nth-child(1) { animation-delay: 0.05s; }
+.notification-item:nth-child(2) { animation-delay: 0.1s; }
+.notification-item:nth-child(3) { animation-delay: 0.15s; }
+.notification-item:nth-child(4) { animation-delay: 0.2s; }
+
+/* Pulse animation for notification indicators */
+.pulse-indicator {
+  animation: pulse-soft 2s infinite;
+}
+
+/* Tournament Creation Page Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200px 0; }
+  100% { background-position: calc(200px + 100%) 0; }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.6), 0 0 30px rgba(59, 130, 246, 0.4); }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Tournament form specific styles */
+.tournament-card {
+  animation: slideInUp 0.3s ease-out;
+}
+
+.tournament-step-icon {
+  animation: float 3s ease-in-out infinite;
+}
+
+.tournament-progress-bar {
+  background: rgba(6, 243, 93, 0.1);
+}
+
+.tournament-button:hover {
+  animation: glow 1.5s ease-in-out infinite;
+}
+
+.tournament-form-group {
+  animation: scaleIn 0.2s ease-out;
+}
+
+/* Tournament Browse Page Animations */
+.floating-element {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.tournament-card-entrance {
+  animation: cardEntrance 0.6s ease-out;
+}
+
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.tournament-card-entrance:nth-child(1) { animation-delay: 0.1s; }
+.tournament-card-entrance:nth-child(2) { animation-delay: 0.2s; }
+.tournament-card-entrance:nth-child(3) { animation-delay: 0.3s; }
+.tournament-card-entrance:nth-child(4) { animation-delay: 0.4s; }
+.tournament-card-entrance:nth-child(5) { animation-delay: 0.5s; }
+.tournament-card-entrance:nth-child(6) { animation-delay: 0.6s; }
+
+.modal-backdrop {
+  animation: backdropFadeIn 0.3s ease-out;
+}
+
+@keyframes backdropFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  animation: modalSlideIn 0.4s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.progress-bar-fill {
+  animation: progressFill 1s ease-out;
+}
+
+@keyframes progressFill {
+  from { width: 0%; }
+}
+
+.pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+  }
+}

@@ -144,6 +144,195 @@
       "rating": "4.9/5 Rating"
     }
   },
+  "tournaments": {
+    "title": "Discover Tournaments",
+    "subtitle": "Join exciting sports tournaments",
+    "searchPlaceholder": "Search tournaments by name, location, organizer...",
+    "allSports": "All Sports",
+    "found": "tournaments found",
+    "joinTournament": "Join Tournament",
+    "createTournament": "Create Tournament",
+    "status": {
+      "open": "Open",
+      "upcoming": "Upcoming",
+      "today": "Today",
+      "finished": "Finished",
+      "almostFull": "🔥 Almost Full"
+    },
+    "details": {
+      "participants": "participants",
+      "organizer": "Organizer",
+      "location": "Location",
+      "date": "Date",
+      "time": "Time",
+      "prize": "Prize"
+    },
+    "viewModes": {
+      "grid": "Grid",
+      "list": "List"
+    },
+    "join": {
+      "title": "Join Tournament",
+      "subtitle": "Enter participation code",
+      "code": "Tournament Code",
+      "codePlaceholder": "Enter 6-character code (e.g., DEMO123)",
+      "codeHint": "💡 Participation code is provided by tournament organizer",
+      "joining": "Joining...",
+      "cancel": "Cancel"
+    },
+    "empty": {
+      "title": "No tournaments found",
+      "withSearch": "No results for \"{{query}}\". Try searching with different keywords.",
+      "withoutSearch": "Try changing your filters to find more suitable tournaments.",
+      "clearFilters": "Clear all filters"
+    }
+  },
+  "matches": {
+    "title": "Match Schedule",
+    "subtitle": "View and manage your match schedule",
+    "today": "Today",
+    "filters": {
+      "all": "All Matches",
+      "live": "Live",
+      "upcoming": "Upcoming",
+      "finished": "Finished"
+    },
+    "status": {
+      "live": "LIVE",
+      "upcoming": "Upcoming",
+      "finished": "Finished"
+    },
+    "details": {
+      "vs": "vs",
+      "location": "Location",
+      "time": "Time",
+      "round": "Round {{number}}",
+      "finals": "Finals",
+      "semifinals": "Semifinals",
+      "quarterfinals": "Quarterfinals"
+    },
+    "actions": {
+      "viewDetails": "View Details",
+      "watchLive": "Watch Live"
+    }
+  },
+  "tournamentCreate": {
+    "title": "Create Tournament",
+    "subtitle": "Create your professional tournament",
+    "steps": {
+      "sport": "Sport Selection",
+      "basic": "Basic Information", 
+      "details": "Tournament Details",
+      "format": "Tournament Format",
+      "review": "Review & Publish"
+    },
+    "sport": {
+      "title": "Choose Your Sport",
+      "subtitle": "Select the sport for your tournament"
+    },
+    "basic": {
+      "tournamentName": "Tournament Name",
+      "tournamentNamePlaceholder": "Enter tournament name",
+      "description": "Description",
+      "descriptionPlaceholder": "Describe your tournament...",
+      "location": "Location",
+      "locationPlaceholder": "Tournament location",
+      "date": "Date",
+      "time": "Time",
+      "maxParticipants": "Maximum Participants",
+      "entryFee": "Entry Fee",
+      "entryFeePlaceholder": "Entry fee amount",
+      "prize": "Prize Pool",
+      "prizePlaceholder": "Prize pool amount"
+    },
+    "format": {
+      "title": "Tournament Format",
+      "singleElimination": "Single Elimination",
+      "doubleElimination": "Double Elimination", 
+      "roundRobin": "Round Robin",
+      "swiss": "Swiss System"
+    },
+    "invitationCode": {
+      "title": "Tournament Invitation Code",
+      "generate": "Generate New Code",
+      "copy": "Copy Code",
+      "description": "💡 This code will be used for players to join your tournament",
+      "shareWith": "Share this code with players",
+      "toJoin": "so they can join the tournament"
+    },
+    "actions": {
+      "continue": "Continue",
+      "previous": "Previous",
+      "publish": "Publish Tournament",
+      "saveDraft": "Save as Draft"
+    },
+    "success": {
+      "title": "Tournament Created!",
+      "message": "Your tournament has been successfully created and published."
+    }
+  },
+  "tournamentSetup": {
+    "title": "Tournament Setup",
+    "subtitle": "Configure your tournament settings",
+    "tabs": {
+      "general": "General",
+      "participants": "Participants",
+      "schedule": "Schedule",
+      "rules": "Rules"
+    },
+    "general": {
+      "basicInfo": "Basic Information",
+      "visibility": "Visibility",
+      "public": "Public",
+      "private": "Private",
+      "status": "Status",
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "participants": {
+      "registered": "Registered Participants",
+      "pending": "Pending Approval",
+      "capacity": "Capacity",
+      "inviteCode": "Invitation Code",
+      "generateCode": "Generate New Code"
+    }
+  },
+  "playerProfile": {
+    "title": "Player Profile",
+    "subtitle": "Manage your player information",
+    "tabs": {
+      "overview": "Overview",
+      "statistics": "Statistics",
+      "tournaments": "Tournaments",
+      "achievements": "Achievements"
+    },
+    "info": {
+      "personalInfo": "Personal Information",
+      "sportsInfo": "Sports Information",
+      "contactInfo": "Contact Information",
+      "fullName": "Full Name",
+      "dateOfBirth": "Date of Birth",
+      "nationality": "Nationality",
+      "primarySport": "Primary Sport",
+      "position": "Position",
+      "experience": "Experience Level",
+      "phone": "Phone Number",
+      "emergencyContact": "Emergency Contact"
+    },
+    "stats": {
+      "matchesPlayed": "Matches Played",
+      "matchesWon": "Matches Won",
+      "winRate": "Win Rate",
+      "tournamentsJoined": "Tournaments Joined",
+      "tournamentsWon": "Tournaments Won",
+      "currentRanking": "Current Ranking"
+    },
+    "achievements": {
+      "recentTournaments": "Recent Tournaments",
+      "badges": "Badges & Awards",
+      "milestones": "Milestones"
+    }
+  },
   "validation": {
     "required": "This field is required",
     "email": "Please enter a valid email address",
