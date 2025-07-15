@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { Plus, Edit, Trash2, Calendar, MapPin, Clock } from 'lucide-react'
 import { cn } from '../../utils'
+import { TeamAvatar } from '../ui/team-avatar'
 import { PlayerManagement } from '../tournament/player-management'
 import { Standings } from '../tournament/standings'
 import type { TournamentData } from '../../pages/tournament-setup'
+import TeamModal from '../modals/team-modal'
 
 interface Player {
   id: string
@@ -54,6 +56,7 @@ const MOCK_TEAMS: Team[] = [
   {
     id: '1',
     name: 'FC Barcelona',
+    logo: 'https://logos-world.net/wp-content/uploads/2020/06/Barcelona-Logo.png',
     players: [
       {
         id: '1',
@@ -102,6 +105,7 @@ const MOCK_TEAMS: Team[] = [
   {
     id: '2',
     name: 'Real Madrid',
+    logo: 'https://logos-world.net/wp-content/uploads/2020/06/Real-Madrid-Logo.png',
     players: [
       {
         id: '4',
@@ -170,9 +174,54 @@ const MOCK_MATCHES: Match[] = [
 export function FootballTournamentSetup({ tournament, activeTab }: FootballTournamentSetupProps) {
   const [teams, setTeams] = useState<Team[]>(MOCK_TEAMS)
   const [matches] = useState<Match[]>(MOCK_MATCHES)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [modalMode, setModalMode] = useState<'add' | 'edit'>('add')
+  const [selectedTeam, setSelectedTeam] = useState<Team | null>(null)
 
   const handleUpdateTeam = (teamId: string, updatedTeam: Team) => {
     setTeams(teams.map((team) => (team.id === teamId ? updatedTeam : team)))
+  }
+
+  const handleAddTeam = () => {
+    setModalMode('add')
+    setSelectedTeam(null)
+    setIsModalOpen(true)
+  }
+
+  const handleEditTeam = (team: Team) => {
+    setModalMode('edit')
+    setSelectedTeam(team)
+    setIsModalOpen(true)
+  }
+
+  const handleDeleteTeam = (teamId: string) => {
+    if (window.confirm('Bạn có chắc chắn muốn xóa đội này?')) {
+      setTeams(teams.filter((team) => team.id !== teamId))
+    }
+  }
+
+  const handleSaveTeam = (teamData: { name: string; captain?: string; contact: string; logo?: string }) => {
+    if (modalMode === 'add') {
+      const newTeam: Team = {
+        id: Date.now().toString(),
+        name: teamData.name,
+        captain: teamData.captain,
+        contact: teamData.contact,
+        logo: teamData.logo,
+        players: [],
+        status: 'pending'
+      }
+      setTeams([...teams, newTeam])
+    } else if (selectedTeam) {
+      const updatedTeam = {
+        ...selectedTeam,
+        name: teamData.name,
+        captain: teamData.captain,
+        contact: teamData.contact,
+        logo: teamData.logo
+      }
+      setTeams(teams.map((team) => (team.id === selectedTeam.id ? updatedTeam : team)))
+    }
   }
 
   const renderTeamsTab = () => (
@@ -185,7 +234,7 @@ export function FootballTournamentSetup({ tournament, activeTab }: FootballTourn
           </p>
         </div>
         <button
-          onClick={() => alert('Chức năng thêm đội đang phát triển')}
+          onClick={handleAddTeam}
           className="flex items-center gap-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors"
         >
           <Plus className="w-4 h-4" />
@@ -197,15 +246,18 @@ export function FootballTournamentSetup({ tournament, activeTab }: FootballTourn
         {teams.map((team) => (
           <div key={team.id} className="bg-slate-700/50 rounded-xl p-6 space-y-4">
             <div className="flex justify-between items-start">
-              <div>
-                <h4 className="font-semibold text-white">{team.name}</h4>
-                <p className="text-sm text-slate-400">Đội trưởng: {team.captain}</p>
+              <div className="flex items-center gap-3">
+                <TeamAvatar teamName={team.name} logoUrl={team.logo} size="md" />
+                <div>
+                  <h4 className="font-semibold text-white">{team.name}</h4>
+                  <p className="text-sm text-slate-400">Đội trưởng: {team.captain || 'Chưa có'}</p>
+                </div>
               </div>
               <div className="flex gap-2">
-                <button className="p-1 text-slate-400 hover:text-blue-400">
+                <button onClick={() => handleEditTeam(team)} className="p-1 text-slate-400 hover:text-blue-400">
                   <Edit className="w-4 h-4" />
                 </button>
-                <button className="p-1 text-slate-400 hover:text-red-400">
+                <button onClick={() => handleDeleteTeam(team.id)} className="p-1 text-slate-400 hover:text-red-400">
                   <Trash2 className="w-4 h-4" />
                 </button>
               </div>
@@ -252,7 +304,7 @@ export function FootballTournamentSetup({ tournament, activeTab }: FootballTourn
 
         {teams.length < tournament.maxTeams && (
           <button
-            onClick={() => alert('Chức năng thêm đội đang phát triển')}
+            onClick={handleAddTeam}
             className="bg-slate-700/30 border-2 border-dashed border-slate-600 rounded-xl p-6 flex flex-col items-center justify-center gap-2 hover:border-slate-500 transition-colors"
           >
             <Plus className="w-8 h-8 text-slate-400" />
@@ -260,6 +312,14 @@ export function FootballTournamentSetup({ tournament, activeTab }: FootballTourn
           </button>
         )}
       </div>
+
+      <TeamModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onSave={handleSaveTeam}
+        team={selectedTeam}
+        mode={modalMode}
+      />
     </div>
   )
 
@@ -300,18 +360,24 @@ export function FootballTournamentSetup({ tournament, activeTab }: FootballTourn
                 </div>
 
                 <div className="flex items-center justify-between mb-3">
-                  <div className="text-center flex-1">
-                    <div className="font-semibold text-white">{match.homeTeam}</div>
-                    <div className="text-sm text-slate-400">Chủ nhà</div>
+                  <div className="text-center flex-1 flex items-center justify-center gap-3">
+                    <TeamAvatar teamName={match.homeTeam} size="sm" />
+                    <div>
+                      <div className="font-semibold text-white">{match.homeTeam}</div>
+                      <div className="text-sm text-slate-400">Chủ nhà</div>
+                    </div>
                   </div>
                   <div className="text-center px-4">
                     <div className="text-2xl font-bold text-white">
                       {match.score ? `${match.score.home} - ${match.score.away}` : 'VS'}
                     </div>
                   </div>
-                  <div className="text-center flex-1">
-                    <div className="font-semibold text-white">{match.awayTeam}</div>
-                    <div className="text-sm text-slate-400">Khách</div>
+                  <div className="text-center flex-1 flex items-center justify-center gap-3">
+                    <div>
+                      <div className="font-semibold text-white">{match.awayTeam}</div>
+                      <div className="text-sm text-slate-400">Khách</div>
+                    </div>
+                    <TeamAvatar teamName={match.awayTeam} size="sm" />
                   </div>
                 </div>
 
