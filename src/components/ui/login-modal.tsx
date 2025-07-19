@@ -21,6 +21,15 @@ import {
 interface LoginModalProps {
   isOpen: boolean
   onClose: () => void
+  onLogin?: (userData: { name: string; email: string; role: string }) => void
+}
+
+interface UserData {
+  name: string
+  email: string
+  role: 'user' | 'organizer'
+  avatar?: string
+  notifications?: number
 }
 
 interface ValidationState {
@@ -30,7 +39,7 @@ interface ValidationState {
   confirmPassword: boolean
 }
 
-export function LoginModal({ isOpen, onClose }: LoginModalProps) {
+export function LoginModal({ isOpen, onClose, onLogin }: LoginModalProps) {
   const { t } = useTranslation()
   const [isLoginMode, setIsLoginMode] = useState(true)
   const [showPassword, setShowPassword] = useState(false)
@@ -71,8 +80,23 @@ export function LoginModal({ isOpen, onClose }: LoginModalProps) {
     // Simulate API call with realistic timing
     await new Promise((resolve) => setTimeout(resolve, 2500))
 
+    // Mock user data based on form input
+    const userData: UserData = {
+      name: isLoginMode ? 'Nguyễn Văn A' : formData.name,
+      email: formData.email,
+      role: formData.email.includes('admin') || formData.email.includes('organizer') ? 'organizer' : 'user',
+      avatar: '/avatar-placeholder.jpg',
+      notifications: Math.floor(Math.random() * 5) + 1
+    }
+
     setIsLoading(false)
-    onClose()
+
+    // Call the onLogin callback if provided
+    if (onLogin) {
+      onLogin(userData)
+    } else {
+      onClose()
+    }
   }
 
   const handleInputChange = (field: string, value: string) => {
@@ -90,7 +114,7 @@ export function LoginModal({ isOpen, onClose }: LoginModalProps) {
   }
 
   const handleSocialLogin = (_provider: string) => {
-    console.log(_provider)
+    // TODO: Implement social login
   }
 
   // Animated particles effect

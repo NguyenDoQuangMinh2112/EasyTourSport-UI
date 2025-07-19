@@ -144,6 +144,195 @@
       "rating": "Đánh giá 4.9/5"
     }
   },
+  "tournaments": {
+    "title": "Khám phá giải đấu",
+    "subtitle": "Tham gia các giải đấu thể thao hấp dẫn",
+    "searchPlaceholder": "Tìm kiếm giải đấu theo tên, địa điểm, ban tổ chức...",
+    "allSports": "Tất cả môn",
+    "found": "giải đấu được tìm thấy",
+    "joinTournament": "Tham gia giải đấu",
+    "createTournament": "Tạo giải đấu",
+    "status": {
+      "open": "Đang mở",
+      "upcoming": "Sắp diễn ra",
+      "today": "Hôm nay",
+      "finished": "Đã kết thúc",
+      "almostFull": "🔥 Sắp đầy"
+    },
+    "details": {
+      "participants": "người tham gia",
+      "organizer": "Ban tổ chức",
+      "location": "Địa điểm",
+      "date": "Ngày",
+      "time": "Giờ",
+      "prize": "Giải thưởng"
+    },
+    "viewModes": {
+      "grid": "Lưới",
+      "list": "Danh sách"
+    },
+    "join": {
+      "title": "Tham gia giải đấu",
+      "subtitle": "Nhập mã tham gia",
+      "code": "Mã tham gia giải đấu",
+      "codePlaceholder": "Nhập mã 6 ký tự (VD: DEMO123)",
+      "codeHint": "💡 Mã tham gia được cung cấp bởi ban tổ chức giải đấu",
+      "joining": "Đang tham gia...",
+      "cancel": "Hủy"
+    },
+    "empty": {
+      "title": "Không tìm thấy giải đấu",
+      "withSearch": "Không có kết quả nào cho \"{{query}}\". Thử tìm kiếm với từ khóa khác.",
+      "withoutSearch": "Thử thay đổi bộ lọc của bạn để tìm thêm giải đấu phù hợp.",
+      "clearFilters": "Xóa tất cả bộ lọc"
+    }
+  },
+  "matches": {
+    "title": "Lịch thi đấu",
+    "subtitle": "Xem và quản lý lịch thi đấu của bạn",
+    "today": "Hôm nay",
+    "filters": {
+      "all": "Tất cả trận đấu",
+      "live": "Trực tiếp",
+      "upcoming": "Sắp diễn ra",
+      "finished": "Đã kết thúc"
+    },
+    "status": {
+      "live": "TRỰC TIẾP",
+      "upcoming": "Sắp diễn ra",
+      "finished": "Đã kết thúc"
+    },
+    "details": {
+      "vs": "vs",
+      "location": "Địa điểm",
+      "time": "Thời gian",
+      "round": "Vòng {{number}}",
+      "finals": "Chung kết",
+      "semifinals": "Bán kết",
+      "quarterfinals": "Tứ kết"
+    },
+    "actions": {
+      "viewDetails": "Xem chi tiết",
+      "watchLive": "Xem trực tiếp"
+    }
+  },
+  "tournamentCreate": {
+    "title": "Tạo giải đấu",
+    "subtitle": "Tạo giải đấu chuyên nghiệp của bạn",
+    "steps": {
+      "sport": "Chọn môn thể thao",
+      "basic": "Thông tin cơ bản",
+      "details": "Chi tiết giải đấu",
+      "format": "Thể thức thi đấu",
+      "review": "Xem lại & Công bố"
+    },
+    "sport": {
+      "title": "Chọn môn thể thao",
+      "subtitle": "Chọn môn thể thao cho giải đấu của bạn"
+    },
+    "basic": {
+      "tournamentName": "Tên giải đấu",
+      "tournamentNamePlaceholder": "Nhập tên giải đấu",
+      "description": "Mô tả",
+      "descriptionPlaceholder": "Mô tả về giải đấu của bạn...",
+      "location": "Địa điểm",
+      "locationPlaceholder": "Địa điểm tổ chức",
+      "date": "Ngày",
+      "time": "Giờ",
+      "maxParticipants": "Số người tham gia tối đa",
+      "entryFee": "Lệ phí tham gia",
+      "entryFeePlaceholder": "Số tiền lệ phí",
+      "prize": "Tổng giải thưởng",
+      "prizePlaceholder": "Số tiền giải thưởng"
+    },
+    "format": {
+      "title": "Thể thức thi đấu",
+      "singleElimination": "Loại trực tiếp",
+      "doubleElimination": "Loại kép",
+      "roundRobin": "Vòng tròn",
+      "swiss": "Hệ thống Thụy Sĩ"
+    },
+    "invitationCode": {
+      "title": "Mã tham gia giải đấu",
+      "generate": "Tạo mã mới",
+      "copy": "Sao chép mã",
+      "description": "💡 Mã này sẽ được dùng để người chơi tham gia vào giải đấu của bạn",
+      "shareWith": "Chia sẻ mã này với người chơi",
+      "toJoin": "để họ có thể tham gia giải đấu"
+    },
+    "actions": {
+      "continue": "Tiếp tục",
+      "previous": "Quay lại",
+      "publish": "Công bố giải đấu",
+      "saveDraft": "Lưu nháp"
+    },
+    "success": {
+      "title": "Tạo giải đấu thành công!",
+      "message": "Giải đấu của bạn đã được tạo và công bố thành công."
+    }
+  },
+  "tournamentSetup": {
+    "title": "Thiết lập giải đấu",
+    "subtitle": "Cấu hình cài đặt giải đấu",
+    "tabs": {
+      "general": "Tổng quan",
+      "participants": "Người tham gia",
+      "schedule": "Lịch thi đấu",
+      "rules": "Luật thi đấu"
+    },
+    "general": {
+      "basicInfo": "Thông tin cơ bản",
+      "visibility": "Hiển thị",
+      "public": "Công khai",
+      "private": "Riêng tư",
+      "status": "Trạng thái",
+      "active": "Hoạt động",
+      "inactive": "Không hoạt động"
+    },
+    "participants": {
+      "registered": "Người tham gia đã đăng ký",
+      "pending": "Chờ phê duyệt",
+      "capacity": "Sức chứa",
+      "inviteCode": "Mã mời",
+      "generateCode": "Tạo mã mới"
+    }
+  },
+  "playerProfile": {
+    "title": "Hồ sơ người chơi",
+    "subtitle": "Quản lý thông tin người chơi",
+    "tabs": {
+      "overview": "Tổng quan",
+      "statistics": "Thống kê",
+      "tournaments": "Giải đấu",
+      "achievements": "Thành tích"
+    },
+    "info": {
+      "personalInfo": "Thông tin cá nhân",
+      "sportsInfo": "Thông tin thể thao",
+      "contactInfo": "Thông tin liên hệ",
+      "fullName": "Họ và tên",
+      "dateOfBirth": "Ngày sinh",
+      "nationality": "Quốc tịch",
+      "primarySport": "Môn thể thao chính",
+      "position": "Vị trí",
+      "experience": "Trình độ kinh nghiệm",
+      "phone": "Số điện thoại",
+      "emergencyContact": "Liên hệ khẩn cấp"
+    },
+    "stats": {
+      "matchesPlayed": "Trận đã chơi",
+      "matchesWon": "Trận thắng",
+      "winRate": "Tỷ lệ thắng",
+      "tournamentsJoined": "Giải đấu tham gia",
+      "tournamentsWon": "Giải đấu thắng",
+      "currentRanking": "Xếp hạng hiện tại"
+    },
+    "achievements": {
+      "recentTournaments": "Giải đấu gần đây",
+      "badges": "Huy hiệu & Giải thưởng",
+      "milestones": "Cột mốc"
+    }
+  },
   "validation": {
     "required": "Trường này là bắt buộc",
     "email": "Vui lòng nhập địa chỉ email hợp lệ",

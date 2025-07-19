@@ -68,7 +68,7 @@ export function TournamentSetupPage() {
     // Simulation: Load tournament data
     const mockTournamentData: TournamentData = {
       id: tournamentId || '1',
-      name: 'Premier League 2024',
+      name: 'Enclave EFC-2025',
       sport: sportId || 'football',
       format: 'round-robin',
       maxTeams: 16,
@@ -191,7 +191,7 @@ export function TournamentSetupPage() {
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   className={cn(
-                    'flex items-center gap-2 py-4 px-2 border-b-2 font-medium text-sm transition-colors',
+                    'flex items-center gap-2 py-4 px-2 border-b-2 font-medium text-sm transition-colors cursor-pointer',
                     activeTab === tab.id
                       ? 'border-blue-500 text-blue-400'
                       : 'border-transparent text-slate-400 hover:text-slate-300 hover:border-slate-300'
