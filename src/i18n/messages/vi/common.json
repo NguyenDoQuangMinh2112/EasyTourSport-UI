@@ -31,7 +31,8 @@
     "contact": "Liên hệ",
     "profile": "Hồ sơ",
     "settings": "Cài đặt",
-    "dashboard": "Bảng điều khiển"
+    "dashboard": "Bảng điều khiển",
+    "lineupDemo": "Demo Đội Hình"
   },
   "auth": {
     "login": "Đăng nhập",

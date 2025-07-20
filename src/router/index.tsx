@@ -2,7 +2,6 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Layout } from '../components'
 import {
   HomePage,
-  DashboardPage,
   ProfileSetupPage,
   TournamentBrowsePage,
   TournamentCreatePage,
@@ -17,6 +16,7 @@ import {
   FeaturesPage,
   TeamsPlayersPage
 } from '../pages'
+import LineupRoleDemo from '../pages/lineup-role-demo'
 import { SportSelectionProvider } from '../contexts/sport-selection-unified'
 
 const router = createBrowserRouter([
@@ -32,12 +32,6 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <HomePage />
-      },
-
-      // Dashboard
-      {
-        path: 'dashboard',
-        element: <DashboardPage />
       },
 
       // Profile setup
@@ -109,6 +103,12 @@ const router = createBrowserRouter([
       {
         path: 'features',
         element: <FeaturesPage />
+      },
+
+      // Lineup role demo
+      {
+        path: 'lineup-demo',
+        element: <LineupRoleDemo />
       },
 
       // Redirects and aliases

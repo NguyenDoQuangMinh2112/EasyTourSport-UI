@@ -184,7 +184,7 @@ export function TournamentCreatePage() {
                       key={sport.id}
                       onClick={() => updateFormData('sport', sport.id)}
                       className={cn(
-                        'p-4 rounded-xl border-2 transition-all duration-200 text-center group hover:scale-105 relative',
+                        'p-4 rounded-xl border-2 transition-all duration-200 text-center group hover:scale-105 relative cursor-pointer',
                         formData.sport === sport.id
                           ? 'border-blue-400 bg-gradient-to-br from-blue-500/20 to-purple-500/20 shadow-lg shadow-blue-500/25'
                           : 'border-slate-600 hover:border-slate-500 bg-slate-800/50'
@@ -231,7 +231,7 @@ export function TournamentCreatePage() {
                         type="button"
                         onClick={() => setCustomTeamCount(false)}
                         className={cn(
-                          'px-3 py-1.5 text-xs rounded-lg transition-all duration-200',
+                          'px-3 py-1.5 text-xs rounded-lg transition-all duration-200 cursor-pointer',
                           !customTeamCount
                             ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30'
                             : 'bg-slate-700/50 text-slate-400 hover:bg-slate-600/50'
@@ -243,7 +243,7 @@ export function TournamentCreatePage() {
                         type="button"
                         onClick={() => setCustomTeamCount(true)}
                         className={cn(
-                          'px-3 py-1.5 text-xs rounded-lg transition-all duration-200',
+                          'px-3 py-1.5 text-xs rounded-lg transition-all duration-200 cursor-pointer',
                           customTeamCount
                             ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30'
                             : 'bg-slate-700/50 text-slate-400 hover:bg-slate-600/50'
@@ -257,7 +257,7 @@ export function TournamentCreatePage() {
                       <select
                         value={formData.maxTeams}
                         onChange={(e) => updateFormData('maxTeams', parseInt(e.target.value))}
-                        className="w-full px-4 py-3 bg-slate-800/50 border border-slate-600 rounded-lg text-white focus:border-blue-500 focus:outline-none"
+                        className="w-full px-4 py-3 bg-slate-800/50 border border-slate-600 rounded-lg text-white focus:border-blue-500 focus:outline-none cursor-pointer"
                       >
                         <option value={4}>4 đội</option>
                         <option value={8}>8 đội</option>
@@ -327,7 +327,7 @@ export function TournamentCreatePage() {
                       key={format.id}
                       onClick={() => updateFormData('format', format.id)}
                       className={cn(
-                        'p-4 rounded-lg border text-center transition-all duration-200 hover:scale-105 relative',
+                        'p-4 rounded-lg border text-center transition-all duration-200 hover:scale-105 relative cursor-pointer',
                         formData.format === format.id
                           ? 'border-purple-500 bg-purple-500/10 shadow-lg'
                           : 'border-slate-600 hover:border-slate-500 bg-slate-800/30'
@@ -362,7 +362,7 @@ export function TournamentCreatePage() {
                       updateFormData('invitationCode', generateInvitationCode())
                     }}
                     className={cn(
-                      'px-3 py-1.5 text-xs rounded-lg transition-all duration-200',
+                      'px-3 py-1.5 text-xs rounded-lg transition-all duration-200 cursor-pointer',
                       !isCustomCode
                         ? 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30'
                         : 'bg-slate-700/50 text-slate-400 hover:bg-slate-600/50'
@@ -374,7 +374,7 @@ export function TournamentCreatePage() {
                     type="button"
                     onClick={() => setIsCustomCode(true)}
                     className={cn(
-                      'px-3 py-1.5 text-xs rounded-lg transition-all duration-200',
+                      'px-3 py-1.5 text-xs rounded-lg transition-all duration-200 cursor-pointer',
                       isCustomCode
                         ? 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30'
                         : 'bg-slate-700/50 text-slate-400 hover:bg-slate-600/50'
@@ -417,7 +417,7 @@ export function TournamentCreatePage() {
                     <button
                       type="button"
                       onClick={() => updateFormData('invitationCode', generateInvitationCode())}
-                      className="px-4 py-3 bg-yellow-500/20 border border-yellow-500/30 rounded-lg text-yellow-400 hover:bg-yellow-500/30 transition-all duration-200 flex items-center gap-2"
+                      className="px-4 py-3 bg-yellow-500/20 border border-yellow-500/30 rounded-lg text-yellow-400 hover:bg-yellow-500/30 transition-all duration-200 flex items-center gap-2 cursor-pointer"
                       title="Tạo mã mới"
                     >
                       <RefreshCw className="w-4 h-4" />
@@ -428,7 +428,7 @@ export function TournamentCreatePage() {
                     type="button"
                     onClick={copyInvitationCode}
                     className={cn(
-                      'px-4 py-3 border rounded-lg transition-all duration-200 flex items-center gap-2',
+                      'px-4 py-3 border rounded-lg transition-all duration-200 flex items-center gap-2 cursor-pointer',
                       copiedCode
                         ? 'bg-green-500/20 border-green-500/30 text-green-400'
                         : 'bg-blue-500/20 border-blue-500/30 text-blue-400 hover:bg-blue-500/30'
@@ -711,7 +711,7 @@ export function TournamentCreatePage() {
                     type="button"
                     onClick={copyInvitationCode}
                     className={cn(
-                      'px-4 py-2 border rounded-lg transition-all duration-200 flex items-center gap-2',
+                      'px-4 py-2 border rounded-lg transition-all duration-200 flex items-center gap-2 cursor-pointer',
                       copiedCode
                         ? 'bg-green-500/20 border-green-500/30 text-green-400'
                         : 'bg-yellow-500/20 border-yellow-500/30 text-yellow-400 hover:bg-yellow-500/30'
@@ -771,7 +771,7 @@ export function TournamentCreatePage() {
           <div className="flex items-center gap-3">
             <button
               onClick={() => navigate(-1)}
-              className="p-2 hover:bg-white/10 rounded-lg transition-all duration-200 group"
+              className="p-2 hover:bg-white/10 rounded-lg transition-all duration-200 group cursor-pointer"
             >
               <ArrowLeft className="w-5 h-5 text-slate-400 group-hover:text-white transition-colors" />
             </button>
@@ -867,7 +867,7 @@ export function TournamentCreatePage() {
                 'flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-200',
                 currentStep === 1
                   ? 'bg-slate-700/50 text-slate-500 cursor-not-allowed'
-                  : 'bg-slate-700 text-slate-300 hover:bg-slate-600 hover:text-white shadow-md hover:shadow-lg tournament-button'
+                  : 'bg-slate-700 text-slate-300 hover:bg-slate-600 hover:text-white shadow-md hover:shadow-lg tournament-button cursor-pointer'
               )}
             >
               <ArrowLeft className="w-4 h-4" />
@@ -877,7 +877,7 @@ export function TournamentCreatePage() {
             {currentStep < STEPS.length ? (
               <button
                 onClick={nextStep}
-                className="flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white rounded-lg font-medium transition-all duration-200 hover:scale-105 shadow-md hover:shadow-lg tournament-button"
+                className="flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white rounded-lg font-medium transition-all duration-200 hover:scale-105 shadow-md hover:shadow-lg tournament-button cursor-pointer"
               >
                 <span className="hidden sm:inline">Tiếp theo</span>
                 <span className="sm:hidden">Next</span>
@@ -891,7 +891,7 @@ export function TournamentCreatePage() {
                   'flex items-center gap-2 px-6 py-2 rounded-lg font-medium transition-all duration-200 shadow-md hover:shadow-lg',
                   formData.confirmed
                     ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white cursor-not-allowed'
-                    : 'bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white hover:scale-105 tournament-button'
+                    : 'bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white hover:scale-105 tournament-button cursor-pointer'
                 )}
               >
                 {formData.confirmed ? (

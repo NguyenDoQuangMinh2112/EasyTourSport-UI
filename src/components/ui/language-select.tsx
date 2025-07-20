@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { supportedLanguages } from '../../i18n/config'
 import { useClickOutside } from '../../hooks/use-click-outside'
+import { Languages, ChevronDown } from 'lucide-react'
 
 interface LanguageSelectProps {
   className?: string
@@ -17,14 +18,25 @@ export function LanguageSelect({ className = '' }: LanguageSelectProps) {
 
   const currentLanguage = supportedLanguages.find((lang) => lang.code === i18n.language) || supportedLanguages[0]
 
-  const getLanguageFlag = (langCode: string) => {
+  const getLanguageCode = (langCode: string) => {
     switch (langCode) {
       case 'en':
-        return '🇺🇸'
+        return 'US'
       case 'vi':
-        return '🇻🇳'
+        return 'VN'
       default:
-        return '🌐'
+        return 'VN'
+    }
+  }
+
+  const getLanguageName = (langCode: string) => {
+    switch (langCode) {
+      case 'en':
+        return 'English'
+      case 'vi':
+        return 'Tiếng Việt'
+      default:
+        return 'Tiếng Việt'
     }
   }
 
@@ -32,17 +44,17 @@ export function LanguageSelect({ className = '' }: LanguageSelectProps) {
     <div className={`relative ${className}`} ref={ref}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+        className="inline-flex items-center gap-2 rounded-lg border border-slate-600/50 bg-slate-800/50 backdrop-blur-sm px-3 py-2 text-sm font-medium text-white hover:bg-slate-700/50 hover:border-slate-500/50 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all duration-200 cursor-pointer"
       >
-        <span className="text-base">{getLanguageFlag(currentLanguage.code)}</span>
-        <span className="hidden sm:inline">{currentLanguage.nativeName}</span>
-        <svg className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-        </svg>
+        <Languages className="w-4 h-4 text-slate-400" />
+        <span className="text-sm font-medium">{getLanguageCode(currentLanguage.code)}</span>
+        <ChevronDown
+          className={`w-4 h-4 text-slate-400 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+        />
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-48 rounded-lg border border-gray-200 bg-white shadow-lg dark:border-gray-600 dark:bg-gray-800 z-50">
+        <div className="absolute right-0 mt-2 w-48 rounded-lg border border-slate-600/50 bg-slate-800/90 backdrop-blur-lg shadow-xl z-50 overflow-hidden">
           <div className="py-1">
             {supportedLanguages.map((language) => (
               <button
@@ -51,16 +63,16 @@ export function LanguageSelect({ className = '' }: LanguageSelectProps) {
                   i18n.changeLanguage(language.code)
                   setIsOpen(false)
                 }}
-                className={`flex items-center gap-3 w-full px-4 py-2 text-left text-sm hover:bg-gray-100 dark:hover:bg-gray-700 ${
+                className={`flex items-center gap-3 w-full px-4 py-3 text-left text-sm transition-all duration-200 cursor-pointer ${
                   i18n.language === language.code
-                    ? 'bg-blue-50 text-blue-700 dark:bg-blue-900 dark:text-blue-300'
-                    : 'text-gray-900 dark:text-gray-300'
+                    ? 'bg-blue-500/20 text-blue-300 border-l-2 border-blue-400'
+                    : 'text-slate-300 hover:bg-slate-700/50 hover:text-white'
                 }`}
               >
-                <span className="text-base">{getLanguageFlag(language.code)}</span>
-                <span>{language.nativeName}</span>
+                <span className="text-sm font-medium min-w-[24px]">{getLanguageCode(language.code)}</span>
+                <span className="font-medium">{getLanguageName(language.code)}</span>
                 {i18n.language === language.code && (
-                  <svg className="h-4 w-4 ml-auto text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="h-4 w-4 ml-auto text-blue-400" fill="currentColor" viewBox="0 0 20 20">
                     <path
                       fillRule="evenodd"
                       d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"

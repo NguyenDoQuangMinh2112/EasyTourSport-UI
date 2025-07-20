@@ -178,6 +178,10 @@ export function FootballTournamentSetup({ tournament, activeTab }: FootballTourn
   const [modalMode, setModalMode] = useState<'add' | 'edit'>('add')
   const [selectedTeam, setSelectedTeam] = useState<Team | null>(null)
 
+  // State cho lựa chọn tạo lịch
+  const [scheduleMode, setScheduleMode] = useState<'default' | 'ai'>('default')
+  const [aiRule, setAiRule] = useState('')
+
   const handleUpdateTeam = (teamId: string, updatedTeam: Team) => {
     setTeams(teams.map((team) => (team.id === teamId ? updatedTeam : team)))
   }
@@ -331,15 +335,89 @@ export function FootballTournamentSetup({ tournament, activeTab }: FootballTourn
 
   const renderScheduleTab = () => (
     <div className="space-y-6">
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
         <div>
           <h3 className="text-xl font-bold text-white mb-2">Lịch thi đấu</h3>
           <p className="text-slate-400">Quản lý lịch trình các trận đấu trong giải</p>
         </div>
-        <button className="flex items-center gap-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors">
-          <Calendar className="w-4 h-4" />
-          Tạo lịch tự động
-        </button>
+        <div className="flex flex-col gap-5 md:min-w-[400px]">
+          <div className="grid grid-cols-2 gap-4">
+            {/* Card option mặc định */}
+            <div
+              className={
+                'cursor-pointer rounded-xl border p-5 flex flex-col items-center transition-all min-h-[120px] ' +
+                (scheduleMode === 'default'
+                  ? 'border-blue-500 bg-blue-500/10 shadow-md scale-105'
+                  : 'border-slate-600 bg-slate-800/40 hover:border-blue-400')
+              }
+              onClick={() => setScheduleMode('default')}
+            >
+              <Calendar className="w-8 h-8 mb-2 text-blue-400" />
+              <div className="font-semibold text-white text-base mb-1">Tạo lịch mặc định</div>
+              <div className="text-sm text-slate-400 text-center leading-tight">
+                Vòng tròn/loại trực tiếp truyền thống
+              </div>
+            </div>
+            {/* Card option AI */}
+            <div
+              className={
+                'cursor-pointer rounded-xl border p-5 flex flex-col items-center transition-all min-h-[120px] ' +
+                (scheduleMode === 'ai'
+                  ? 'border-purple-500 bg-purple-500/10 shadow-md scale-105'
+                  : 'border-slate-600 bg-slate-800/40 hover:border-purple-400')
+              }
+              onClick={() => setScheduleMode('ai')}
+            >
+              <span className="inline-block mb-2">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-purple-400">
+                  <path
+                    d="M12 2v2m0 16v2m10-10h-2M4 12H2m15.07-7.07-1.41 1.41M6.34 17.66l-1.41 1.41m12.02 0 1.41-1.41M6.34 6.34 4.93 4.93"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <circle cx="12" cy="12" r="5" stroke="currentColor" strokeWidth="2" />
+                </svg>
+              </span>
+              <div className="font-semibold text-white text-base mb-1">Tạo lịch với AI</div>
+              <div className="text-sm text-slate-400 text-center leading-tight">
+                Nhập luật, điều kiện riêng, AI sắp xếp phù hợp
+              </div>
+            </div>
+          </div>
+          {/* Ô nhập luật AI */}
+          {scheduleMode === 'ai' && (
+            <div className="mt-2">
+              <label className="block text-slate-300 text-sm mb-2 font-semibold">Nhập luật/cách sắp xếp riêng</label>
+              <textarea
+                className="w-full bg-slate-900 border border-purple-500/40 focus:border-purple-500 rounded-lg px-4 py-3 text-white focus:outline-none min-h-[90px] text-sm shadow-inner transition-all"
+                placeholder="VD: Không cho đội A gặp đội B ở vòng 1, ưu tiên đội C đá trận đầu..."
+                value={aiRule}
+                onChange={(e) => setAiRule(e.target.value)}
+              />
+            </div>
+          )}
+          <button
+            className={
+              'flex items-center justify-center gap-2 px-6 py-2 rounded-lg font-semibold transition-colors mt-2 text-sm mx-auto min-w-[160px] max-w-[220px]' +
+              (scheduleMode === 'default'
+                ? ' bg-blue-500 hover:bg-blue-600 text-white'
+                : ' bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white')
+            }
+            style={{ minHeight: 0 }}
+            onClick={() => {
+              if (scheduleMode === 'default') {
+                console.log('Tạo lịch mặc định')
+              } else {
+                console.log('Tạo lịch với AI:', aiRule)
+              }
+            }}
+          >
+            <Calendar className="w-5 h-5" />
+            <span>{scheduleMode === 'default' ? 'Tạo lịch mặc định' : 'Tạo lịch với AI'}</span>
+          </button>
+        </div>
       </div>
 
       <div className="space-y-4">

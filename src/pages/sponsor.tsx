@@ -17,7 +17,7 @@ const BANK_INFO = {
   qrCode: '/qr-code-placeholder.png'
 }
 
-export default function SponsorPage() {
+const SponsorPage = () => {
   const { t } = useTranslation()
   const [copiedField, setCopiedField] = useState<string | null>(null)
 
@@ -56,14 +56,12 @@ export default function SponsorPage() {
             <Heart className="w-5 h-5 text-pink-300 animate-pulse" />
             <span className="text-white font-medium">{t('sponsor.hero.badge')}</span>
           </div>
-          
+
           <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-pink-300 to-purple-300 bg-clip-text text-transparent">
             {t('sponsor.hero.title')}
           </h1>
-          
-          <p className="text-lg text-purple-100 mb-8 max-w-2xl mx-auto">
-            {t('sponsor.hero.description')}
-          </p>
+
+          <p className="text-lg text-purple-100 mb-8 max-w-2xl mx-auto">{t('sponsor.hero.description')}</p>
 
           {/* Stats Bar */}
           <div className="flex items-center justify-center gap-8 text-purple-200 text-sm">
@@ -86,7 +84,6 @@ export default function SponsorPage() {
       {/* Main Content - Single Row Layout */}
       <div className="max-w-6xl mx-auto px-6 pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          
           {/* Payment Methods - Compact */}
           <div className="lg:col-span-1 space-y-6">
             {/* QR Code */}
@@ -94,13 +91,13 @@ export default function SponsorPage() {
               <div className="text-center">
                 <QrCode className="w-8 h-8 text-blue-300 mx-auto mb-3" />
                 <h3 className="text-xl font-bold text-white mb-4">{t('sponsor.qr.title')}</h3>
-                
+
                 <div className="bg-white p-4 rounded-xl mb-4">
                   <div className="w-32 h-32 bg-gradient-to-br from-blue-100 to-purple-100 rounded-lg flex items-center justify-center mx-auto">
                     <QrCode className="w-16 h-16 text-blue-600" />
                   </div>
                 </div>
-                
+
                 <p className="text-sm text-purple-200">{t('sponsor.qr.description')}</p>
               </div>
             </div>
@@ -111,7 +108,7 @@ export default function SponsorPage() {
                 <CreditCard className="w-6 h-6 text-green-300" />
                 <h3 className="text-xl font-bold text-white">{t('sponsor.bank.title')}</h3>
               </div>
-              
+
               <div className="space-y-3">
                 <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
                   <div>
@@ -119,7 +116,7 @@ export default function SponsorPage() {
                     <p className="text-white font-semibold">{BANK_INFO.bankName}</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
                   <div className="flex-1">
                     <p className="text-xs text-purple-300">{t('sponsor.bank.accountNumber')}</p>
@@ -129,10 +126,14 @@ export default function SponsorPage() {
                     onClick={() => copyToClipboard(BANK_INFO.accountNumber, 'account')}
                     className="p-2 text-purple-300 hover:text-white transition-colors"
                   >
-                    {copiedField === 'account' ? <Check className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4" />}
+                    {copiedField === 'account' ? (
+                      <Check className="w-4 h-4 text-green-400" />
+                    ) : (
+                      <Copy className="w-4 h-4" />
+                    )}
                   </button>
                 </div>
-                
+
                 <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
                   <div>
                     <p className="text-xs text-purple-300">{t('sponsor.bank.accountName')}</p>
@@ -149,7 +150,7 @@ export default function SponsorPage() {
               <h2 className="text-2xl font-bold text-white mb-2">{t('sponsor.tiers.title')}</h2>
               <p className="text-purple-200">{t('sponsor.tiers.description')}</p>
             </div>
-            
+
             <div className="grid grid-cols-2 gap-4">
               {SPONSOR_TIERS.map((tier, index) => {
                 const IconComponent = tier.icon
@@ -159,22 +160,20 @@ export default function SponsorPage() {
                     className="group relative bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 cursor-pointer"
                   >
                     <div className="text-center">
-                      <div className={`w-12 h-12 rounded-full bg-gradient-to-r ${tier.color} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}>
+                      <div
+                        className={`w-12 h-12 rounded-full bg-gradient-to-r ${tier.color} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}
+                      >
                         <IconComponent className="w-6 h-6 text-white" />
                       </div>
-                      
-                      <h3 className="text-lg font-bold text-white mb-2">
-                        {t(`${tier.label}.name`)}
-                      </h3>
-                      
+
+                      <h3 className="text-lg font-bold text-white mb-2">{t(`${tier.label}.name`)}</h3>
+
                       <div className="text-2xl font-bold text-transparent bg-gradient-to-r from-pink-300 to-purple-300 bg-clip-text mb-3">
                         {formatCurrency(tier.amount)}
                       </div>
-                      
-                      <p className="text-sm text-purple-200 mb-4">
-                        {t(`${tier.label}.description`)}
-                      </p>
-                      
+
+                      <p className="text-sm text-purple-200 mb-4">{t(`${tier.label}.description`)}</p>
+
                       <div className="text-xs text-purple-300 space-y-1">
                         <div className="flex items-center gap-1">
                           <Check className="w-3 h-3" />
@@ -196,12 +195,12 @@ export default function SponsorPage() {
                 )
               })}
             </div>
-            
+
             {/* CTA */}
             <div className="text-center mt-8 p-6 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-2xl border border-pink-500/30">
               <h3 className="text-xl font-bold text-white mb-2">{t('sponsor.cta.title')}</h3>
               <p className="text-purple-200 mb-4">{t('sponsor.cta.description')}</p>
-              
+
               <button
                 onClick={() => copyToClipboard(BANK_INFO.accountNumber, 'cta')}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold rounded-full hover:from-pink-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105"
@@ -225,3 +224,5 @@ export default function SponsorPage() {
     </div>
   )
 }
+
+export default SponsorPage

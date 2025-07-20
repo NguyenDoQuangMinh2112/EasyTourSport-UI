@@ -31,7 +31,8 @@
     "contact": "Contact",
     "profile": "Profile",
     "settings": "Settings",
-    "dashboard": "Dashboard"
+    "dashboard": "Dashboard",
+    "lineupDemo": "Lineup Demo"
   },
   "auth": {
     "login": "Login",
